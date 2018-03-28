@@ -15,10 +15,6 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'jade');
-/*app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);*/
 //initial setups 
 //app.use(favicon(path.join(__dirname, 'app_client', 'favicon.ico')));
 app.use(logger('dev'));
@@ -74,9 +70,5 @@ app.use(function (err, req, res, next) {
     });
 });
 var httpsServer = require('./app_server/servers/http.js')(app); //HTTP server
-//app.set('port', process.env.PORT || 3000);
-/*var server = app.listen(app.get('port'), function () {
-    debug('Express server listening on port ' + server.address().port);
-});
-*/ 
+require('./app_server/servers/websockets.js')(httpsServer); //Websockets server
 //# sourceMappingURL=app.js.map
