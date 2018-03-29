@@ -108,6 +108,9 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app_api\models\" />
+    <Folder Include="app_api\routes\" />
+    <Folder Include="app_api\utils\" />
     <Folder Include="app_client\images\" />
     <Folder Include="app_client\images\emojis\" />
     <Folder Include="app_client\javascripts\" />
@@ -122,6 +125,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app_api\config.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_api\models\db.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_api\models\userModel.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_api\routes\routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_api\utils\utils.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_client\config.js">
