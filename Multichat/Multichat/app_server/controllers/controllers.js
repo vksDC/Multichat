@@ -1,5 +1,33 @@
-﻿module.exports.about = function (req, res, next) {
-    res.render('about', {});
+﻿var layoutCommon = {
+    foot: 'Web created for demonstration purposes',
+    goAbout: 'About us',
+    goHome: 'MultiChat',
+    goLogin: 'Login',
+    goLoout: 'Logout',
+    goProfile: 'See user profile',
+    goVideochat: 'Go to videochat',
+    year: new Date().getFullYear()
+};
+
+module.exports.about = function (req, res, next) {
+    res.render('about', {
+        layoutCommon: layoutCommon,
+        lang: {
+            imageAlt: 'Technologies used',
+            info: 'This Web has been created for demonstration purposes',
+            infoLabel: 'Info',
+            message: 'Some technologies that have been used are:'
+                + '<br><ul>'
+                + '<li><strong>WebSockets</strong> to deal with: messages (text, icons and '
+                + 'pictures), drawings and presentations</li>'
+                + '<li><strong>WebRTC</strong> to deal with: messages (voice and files) and '
+                + 'videoconference (audio and video)</li>'
+                + '<li><strong>etc...</strong> to </li>'
+                + '</ul>In addition, we...',
+            section: 'About',
+            title: 'MultiChat: About'
+        }
+    });
 };
 
 module.exports.index = function (req, res, next) {
