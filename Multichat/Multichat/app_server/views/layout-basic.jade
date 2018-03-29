@@ -3,7 +3,7 @@ html(lang='en' ng-app='multichatApp')
 head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title=lang.title
+    title= lang.title
     link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
@@ -12,9 +12,9 @@ head
     link(rel='stylesheet', href='/angular-material/angular-material.min.css')
     link(rel='stylesheet', href='/dropzone/dist/dropzone.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-
 body
-    block content-basic div(growl)
+    block content-basic
+    div(growl)
     script(src='/jquery/dist/jquery.min.js')
     script(src='/bootstrap/dist/js/bootstrap.min.js')
     script(src='/angular/angular.min.js')
@@ -29,6 +29,8 @@ body
     script(src='/dropzone/dist/dropzone.js')
     script(src='/ng-dropzone/dist/ng-dropzone.min.js')
     script(src='/fabric.js/dist/fabric.min.js')
+
     script(src='https://maps.googleapis.com/maps/api/js?key=TOBEDEFINED')
+
     script(src='/config.js')
 

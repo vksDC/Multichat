@@ -1,4 +1,4 @@
-﻿angular.module('multichatApp', []);
+﻿//angular.module('multichatApp', []);
 
 var config = {};
 //Heroku assigns the value through the PORT environment variable. You cannot choose
