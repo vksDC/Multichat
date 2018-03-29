@@ -118,8 +118,12 @@
     <Folder Include="app_server\routes\" />
     <Folder Include="app_server\views\" />
     <Folder Include="app_client\" />
+    <Folder Include="app_api\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app_api\config.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_client\config.js">
       <SubType>Code</SubType>
     </Compile>
