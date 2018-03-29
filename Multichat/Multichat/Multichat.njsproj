@@ -37,6 +37,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app_server\routes\index.ts" />
     <TypeScriptCompile Include="app_server\routes\user.ts" />
+    <Content Include="app_client\favicon.ico" />
     <Content Include="app_client\images\emojis\natur-09.png" />
     <Content Include="app_client\images\emojis\orte-15.png" />
     <Content Include="app_client\images\emojis\orte-59.png" />
@@ -119,6 +120,9 @@
     <Folder Include="app_client\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app_client\config.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_server\config.js">
       <SubType>Code</SubType>
     </Compile>
