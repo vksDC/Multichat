@@ -37,6 +37,8 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app_server\routes\index.ts" />
     <TypeScriptCompile Include="app_server\routes\user.ts" />
+    <Content Include="app_server\public\images\logo.png" />
+    <Content Include="app_server\public\images\logos.jpg" />
     <Content Include="app_server\public\stylesheets\main.css" />
     <Content Include="app_server\views\about.jade">
       <SubType>Code</SubType>
