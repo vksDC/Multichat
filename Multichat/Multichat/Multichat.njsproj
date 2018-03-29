@@ -37,14 +37,35 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app_server\routes\index.ts" />
     <TypeScriptCompile Include="app_server\routes\user.ts" />
-    <Content Include="app_server\public\images\error-404.png" />
-    <Content Include="app_server\public\images\file-icon.jpg" />
-    <Content Include="app_server\public\images\funchat.png" />
-    <Content Include="app_server\public\images\logo.png" />
-    <Content Include="app_server\public\images\logos.png" />
-    <Content Include="app_server\public\images\nacre-background-tile.jpg" />
-    <Content Include="app_server\public\images\videoconference.png" />
-    <Content Include="app_server\public\stylesheets\main.css" />
+    <Content Include="app_client\images\emojis\natur-09.png" />
+    <Content Include="app_client\images\emojis\orte-15.png" />
+    <Content Include="app_client\images\emojis\orte-59.png" />
+    <Content Include="app_client\images\emojis\smiley-01.png" />
+    <Content Include="app_client\images\emojis\smiley-05.png" />
+    <Content Include="app_client\images\emojis\smiley-06.png" />
+    <Content Include="app_client\images\emojis\smiley-07.png" />
+    <Content Include="app_client\images\emojis\smiley-08.png" />
+    <Content Include="app_client\images\emojis\smiley-12.png" />
+    <Content Include="app_client\images\emojis\smiley-14.png" />
+    <Content Include="app_client\images\emojis\smiley-15.png" />
+    <Content Include="app_client\images\emojis\smiley-17.png" />
+    <Content Include="app_client\images\emojis\smiley-18.png" />
+    <Content Include="app_client\images\emojis\smiley-19.png" />
+    <Content Include="app_client\images\emojis\smiley-22.png" />
+    <Content Include="app_client\images\emojis\smiley-23.png" />
+    <Content Include="app_client\images\emojis\smiley-32.png" />
+    <Content Include="app_client\images\emojis\smiley-33.png" />
+    <Content Include="app_client\images\emojis\smiley-35.png" />
+    <Content Include="app_client\images\emojis\smiley-41.png" />
+    <Content Include="app_client\images\error-404.png" />
+    <Content Include="app_client\images\file-icon.jpg" />
+    <Content Include="app_client\images\funchat.png" />
+    <Content Include="app_client\images\logo.png" />
+    <Content Include="app_client\images\logo2.png" />
+    <Content Include="app_client\images\logos.png" />
+    <Content Include="app_client\images\nacre-background-tile.jpg" />
+    <Content Include="app_client\images\videoconference.png" />
+    <Content Include="app_client\stylesheets\main.css" />
     <Content Include="app_server\views\about.jade">
       <SubType>Code</SubType>
     </Content>
@@ -86,15 +107,16 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app_client\images\" />
+    <Folder Include="app_client\images\emojis\" />
+    <Folder Include="app_client\javascripts\" />
+    <Folder Include="app_client\stylesheets\" />
     <Folder Include="app_server\" />
     <Folder Include="app_server\controllers\" />
     <Folder Include="app_server\servers\" />
-    <Folder Include="app_server\public\" />
-    <Folder Include="app_server\public\images\" />
-    <Folder Include="app_server\public\javascripts\" />
-    <Folder Include="app_server\public\stylesheets\" />
     <Folder Include="app_server\routes\" />
     <Folder Include="app_server\views\" />
+    <Folder Include="app_client\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app_server\config.js">
