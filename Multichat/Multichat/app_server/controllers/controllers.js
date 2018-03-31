@@ -88,9 +88,49 @@ module.exports.profile = function (req, res, next) {
 };
 
 module.exports.register = function (req, res, next) {
-    res.render('register', {});
+    //res.render('register', {
+    if (req.sub === false)
+    {
+        res.render('register', {
+            authenticated: req.sub,
+            layoutCommon: layoutCommon,
+            lang: {
+                title: 'MultiChat: Register',
+                already: 'Already a registered user?',
+                loginHere: 'Login!',
+                fieldSizeCheck: 'The value must have between 3 and 20 characters',
+                checking: 'Checking...',
+                name: 'Name',
+                nameEnter: 'Enter your name',
+                nameRequired: 'Tell us your name',
+                password: 'Password',
+                passwordEnter: 'Enter your password',
+                passwordRequired: 'Tell us your password',
+                passwordRepeat: 'Repeat password',
+                passwordRepeatEnter: 'Repeat your password',
+                passwordsCheck: 'The two passwords do not match',
+                section: 'Register',
+                submit: 'Submit',
+                userName: 'User name',
+                userNameEnter: 'Enter your user name',
+                userNameRequired: 'Tell us your user name',
+                userNameNotAvailable: 'The user name is not available. Please choose another one',
+                error: 'An error has been produced'
+            }
+        });
+    }
+    else
+    {
+        module.exports.multichat(req, res, next);
+    }
+    //});
 };
 
 module.exports.multichat = function (req, res, next) {
-    res.render('multichat', {});
+    res.render('multichat', {
+        layoutCommon: layoutCommon,
+        lang: {
+            title: 'Multichat'
+        }
+    });
 };

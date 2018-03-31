@@ -1,3 +1,3 @@
-﻿angular.module('multichatApp', []);
+﻿angular.module('multichatApp', ['ngCookies']);
 
 var config = {};
