@@ -117,6 +117,7 @@
     <Folder Include="app_client\images\emojis\" />
     <Folder Include="app_client\javascripts\" />
     <Folder Include="app_client\javascripts\controllers\" />
+    <Folder Include="app_client\javascripts\directives\" />
     <Folder Include="app_client\stylesheets\" />
     <Folder Include="app_server\" />
     <Folder Include="app_server\controllers\" />
@@ -152,6 +153,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_client\javascripts\controllers\registerCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\directives\compareTo.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\directives\userNameAvailable.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_server\config.js">
