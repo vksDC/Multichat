@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 var gracefulShutdown;
 var dbURI = config.db.local;
 
-if (process.env.NODE_ENV == 'production')
+if (process.env.NODE_ENV === 'production')
 {
     dbURI = config.db.remote;
 }
-else if (process.env.NODE_ENV == 'test')
+else if (process.env.NODE_ENV === 'test')
 {
     dbURI = config.db.test;
 }
