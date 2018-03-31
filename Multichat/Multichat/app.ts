@@ -12,6 +12,8 @@ var logger = require('morgan'); //to show a log with what is happening in the se
 var cookieParser = require('cookie-parser'); //to work with cookies 
 var passport = require('passport'); //to work with the authentication system
 
+require('./app_api/models/db');
+var routesApi = require('./app_api/routes/routes');
 var routesServer = require('./app_server/routes/routes');
 
 var app = express();
@@ -33,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'app_client'))); // esto no se si es
 app.use(express.static(path.join(__dirname, 'presentations'))); // esto no se si es necesario
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
+app.use('/api', routesApi); //routes for the REST API (start always with /api)
 app.use('/', routesServer); //routes for the different web pages of the site
 
 // catch 404 and forward to error handler
