@@ -37,15 +37,15 @@ gulp.task('watch', function () {
 gulp.task('default', function () {
     nodemon({
         ignore: ['app_client/*', 'bower_components/*'],
-        verbose: false,
-    })
+        verbose: false
+    });
 });
 
 gulp.task('development', function () {
     gulp.start('scripts');
     nodemon({
         ignore: ['app_client/*', 'bower_components/*'],
-        verbose: true,
+        verbose: true
     }).on('start', ['watch']); //nodemon run watch on start
 });
 

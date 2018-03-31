@@ -1,9 +1,13 @@
-﻿var passport = require('passport');
+﻿console.log("En userCtrl");
+
+var passport = require('passport');
 var mongoose = require('mongoose');
 var utils = require('../utils/utils');
 var User = mongoose.model('User');
 
 require('../config/passport.js');
+
+console.log("Después de passport");
 
 module.exports.register = function (req, res) {
     if (!req.body.userName || !req.body.name || !req.body.password)

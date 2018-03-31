@@ -12,8 +12,9 @@ else if (process.env.NODE_ENV === 'test')
     dbURI = config.db.test;
 }
 
-mongoose.connect(dbURI); //CONNECTION EVENTS
+mongoose.connect(dbURI, { autoIndex: false });
 
+//CONNECTION EVENTS
 mongoose.connection.on('connected', function () {
     console.log('Mongoose connected to ' + dbURI);
 });
