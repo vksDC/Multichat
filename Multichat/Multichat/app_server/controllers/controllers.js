@@ -76,7 +76,34 @@ module.exports.index = function (req, res, next) {
 };
 
 module.exports.login = function (req, res, next) {
-    res.render('login', {});
+    if (req.sub == false)
+    {
+        res.render('login', {
+            authenticated: req.sub,
+            redirect: req.query.p, //if any
+            layoutCommon: layoutCommon,
+            lang: {
+                title: 'MultiChat: Login',
+                already: 'Not a registered user?',
+                registerHere: 'Register!',
+                fieldSizeCheck: 'The value must have between 3 and 20 characters',
+                password: 'Password',
+                passwordEnter: 'Enter your password',
+                passwordRequired: 'Tell us your password',
+                section: 'Login',
+                submit: 'Submit',
+                userName: 'User name',
+                userNameEnter: 'Enter your user name',
+                userNameRequired: 'Tell us your user name',
+                userNotValid: 'The username or the password introduced are not valid. Please, try again',
+                error: 'An error has been produced'
+            }
+        });
+    }
+    else
+    {
+        module.exports.multichat(req, res, next);
+    }
 };
 
 module.exports.logout = function (req, res, next) {
