@@ -80,7 +80,16 @@ module.exports.login = function (req, res, next) {
 };
 
 module.exports.logout = function (req, res, next) {
-    res.render('logout', {});
+    res.render('logout', {
+        authenticated: true,
+        layoutCommon: layoutCommon,
+        lang: {
+            message: 'You have been loged out',
+            section: 'Logout',
+            successLabel: 'Success',
+            title: 'MultiChat: Logout'
+        }
+    });
 };
 
 module.exports.profile = function (req, res, next) {
