@@ -17,14 +17,14 @@
         $scope.data.userNotValid = false;
         $cookies.put('token', res.data.token);
 
-        if ($scope.redirect != 'undefined')
+        if ($scope.redirect !== 'undefined')
             $window.location.href = $scope.redirect;
         else
             $window.location.href = '/multichat';
     }
 
     function error(res) {
-        if (res.status == 401)
+        if (res.status === 401)
         {
             $scope.data.userNotValid = true;
         }

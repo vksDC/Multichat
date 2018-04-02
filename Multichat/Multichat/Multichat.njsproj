@@ -158,6 +158,9 @@
     <Compile Include="app_client\javascripts\controllers\logoutCtrl.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app_client\javascripts\controllers\profileCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_client\javascripts\controllers\registerCtrl.js">
       <SubType>Code</SubType>
     </Compile>

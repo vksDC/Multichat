@@ -76,7 +76,7 @@ module.exports.index = function (req, res, next) {
 };
 
 module.exports.login = function (req, res, next) {
-    if (req.sub == false)
+    if (req.sub === false)
     {
         res.render('login', {
             authenticated: req.sub,
@@ -120,7 +120,30 @@ module.exports.logout = function (req, res, next) {
 };
 
 module.exports.profile = function (req, res, next) {
-    res.render('profile', {});
+    res.render('profile', {
+        authenticated: true,
+        sub: req.sub,
+        layoutCommon: layoutCommon,
+        lang: {
+            title: 'MultiChat: Profile',
+            fieldSizeCheck: 'The value must have between 3 and 20 characters',
+            hello: 'Hello',
+            description: 'Here you may change your name info or your password',
+            name: 'New name',
+            nameEnter: 'Enter your name',
+            password: 'New password',
+            passwordEnter: 'Enter your new password',
+            passwordRepeat: 'Repeat password',
+            passwordRepeatEnter: 'Repeat your new password',
+            passwordsCheck: 'The two passwords do not match',
+            section: 'Profile',
+            submit: 'Submit',
+            userName: 'User name',
+            error: 'An error has been produced',
+            done: 'Changes have been done successfully',
+            delete: 'Delete user'
+        }
+    });
 };
 
 module.exports.register = function (req, res, next) {
