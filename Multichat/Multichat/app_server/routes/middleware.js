@@ -3,6 +3,7 @@ var moment = require('moment');
 
 module.exports.isAuthenticated = function (req, res, next) {
     var token = (req.cookies && req.cookies.token);
+    var secret = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
 
     if (!token)
     {
@@ -11,14 +12,15 @@ module.exports.isAuthenticated = function (req, res, next) {
 
     try
     {
-        var payload = jwt.decode(token, process.env.JWT_SECRET);
+        var payload = jwt.decode(token, secret);
+        //var payload = jwt.decode(token, process.env.JWT_SECRET);
     }
     catch (err)
     {
         res.redirect('./login?p=' + req.path); //token is not valid
     }
 
-    var payload = jwt.decode(token, process.env.JWT_SECRET);
+    //var payload = jwt.decode(token, process.env.JWT_SECRET);
 
     if (payload.exp <= moment().unix())
     {
@@ -40,7 +42,9 @@ module.exports.detectAuthenticated = function (req, res, next) {
     {
         try
         {
-            var payload = jwt.decode(token, process.env.JWT_SECRET);
+            var secret = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
+            var payload = jwt.decode(token, secret);
+            //var payload = jwt.decode(token, process.env.JWT_SECRET);
 
             if (payload.exp <= moment().unix())
             {

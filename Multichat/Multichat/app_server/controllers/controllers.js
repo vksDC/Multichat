@@ -153,7 +153,6 @@ module.exports.profile = function (req, res, next) {
 };
 
 module.exports.register = function (req, res, next) {
-    //res.render('register', {
     if (req.sub === false)
     {
         res.render('register', {
@@ -188,10 +187,10 @@ module.exports.register = function (req, res, next) {
     {
         module.exports.multichat(req, res, next);
     }
-    //});
 };
 
 var config = require('../config');
+
 var layoutMultichat = {
     drawings: 'Drawings',
     geolocation: 'Geolocation',

@@ -46,6 +46,7 @@ app.use(function (req, res, next) {
     err['status'] = 404;
     err['imageSrc'] = 'error-404.png';
     err['imageAlt'] = 'Error 404';
+    err['stack'] = (process.env.NODE_ENV == 'development') ? err.stack : '';
     next(err);
     res.end();
 });
