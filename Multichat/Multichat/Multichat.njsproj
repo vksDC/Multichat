@@ -73,6 +73,12 @@
     <Content Include="app_client\templates\audioUrlModal.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="app_client\templates\messageFileModal.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app_client\templates\messagePictureOpenModal.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app_server\views\about.jade">
       <SubType>Code</SubType>
     </Content>
@@ -125,6 +131,7 @@
     <Folder Include="app_client\javascripts\controllers\" />
     <Folder Include="app_client\javascripts\directives\" />
     <Folder Include="app_client\javascripts\modules\" />
+    <Folder Include="app_client\javascripts\filters\" />
     <Folder Include="app_client\javascripts\utils\" />
     <Folder Include="app_client\javascripts\services\" />
     <Folder Include="app_client\templates\" />
@@ -174,6 +181,15 @@
     <Compile Include="app_client\javascripts\controllers\logoutCtrl.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app_client\javascripts\controllers\messagesCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\controllers\messagesFileModalCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\controllers\messagesPictureOpenModalCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_client\javascripts\controllers\peopleCtrl.js">
       <SubType>Code</SubType>
     </Compile>
@@ -189,6 +205,12 @@
     <Compile Include="app_client\javascripts\directives\userNameAvailable.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app_client\javascripts\filters\emojisFilter.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\filters\picturesFilter.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_client\javascripts\modules\multichatApp.js">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +221,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_client\javascripts\utils\audioManagement.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\utils\messagesManagement.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_client\javascripts\utils\peopleManagement.js">

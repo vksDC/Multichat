@@ -8,10 +8,12 @@
     var HOST = location.origin.replace(/^http/, 'ws');
     var ws = $websocket(HOST);
     var peopleManagement = new PeopleManagement(ws, growl);
+    var messagesManagement = new MessagesManagement(ws, growl);
     var audioManagement = new AudioManagement(ws, growl);
 
     ws.onOpen(function () {
         peopleManagement.setLoading(false);
+        messagesManagement.setLoading(false);
         growl.success('Server started. Enjoy!', { title: 'Success' });
         setInterval(function () {
             ws.send('ping at ' + new Date().getUTCSeconds());
@@ -35,6 +37,9 @@
                     else if (obj.data.operation === 'disconnected')
                         peopleManagement.deletePerson(obj.data);
                     break;
+                case "messages":
+                    messagesManagement.addMessage(obj.data);
+                    break;
                 case "audio":
                     audioManagement.updateAudioUrl(obj.data.url);
                     break;
@@ -45,6 +50,7 @@
     var methods = {
         ws: ws,
         peopleManagement: peopleManagement,
+        messagesManagement: messagesManagement,
         audioManagement: audioManagement
     };
 

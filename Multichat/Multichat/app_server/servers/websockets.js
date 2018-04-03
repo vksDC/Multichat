@@ -46,6 +46,10 @@
                         broadcast(message, ''); //to notify everybody
                         break;
 
+                    case 'messages':
+                        broadcast(message, ''); //to notify everybody
+                        break;
+
                     default: console.log('Unrecognized message');
                         break;
                 }

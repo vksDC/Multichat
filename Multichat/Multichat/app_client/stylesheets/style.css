@@ -1,5 +1,4 @@
 ﻿/*PEOPLE LIST*/
-
 #peopleList {
     height: 750px;
     overflow: auto;
@@ -19,4 +18,82 @@ ul#listGroupPeople li {
 ul#listGroupPeople li:first-child {
     background-color: #f9feff;
     font-style: italic;
+}
+
+/*MESSAGES*/
+#messageList {
+    height: 750px;
+    overflow: auto;
+}
+
+ul#listGroupMessages {
+    background-image: url("../images/nacre-background-tile.jpg");
+    background-repeat: repeat;
+    height: 590px;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.listGroupMessagesLeft {
+    border-radius: 20px;
+    background-color: white;
+    word-wrap: break-word;
+    max-width: 400px;
+    float: left;
+    clear: both;
+}
+
+    .listGroupMessagesLeft .messageUserName {
+        color: blue;
+        font-family: "League Gothic", Impact, sans-serif;
+        font-size: small;
+    }
+
+.listGroupMessagesRight {
+    border-radius: 20px;
+    background-color: white;
+    word-wrap: break-word;
+    max-width: 400px;
+    float: right;
+    clear: both;
+}
+
+    .listGroupMessagesRight .messageUserName {
+        color: green;
+        font-family: "League Gothic", Impact, sans-serif;
+        font-size: small;
+    }
+
+.messageText {
+    font-family: Calibri;
+}
+
+#messageControlArea {
+    padding: 0 20px 20px 20px;
+    background-color: lightgrey;
+}
+
+#messageControlAreaButtoms {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.fa-white {
+    color: white;
+}
+
+#emojisArea {
+    background-image: url("../images/nacre-background-tile.jpg");
+    background-repeat: repeat;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+#uploadPictureDropzone {
+    border: dashed;
+    color: blue;
 }
