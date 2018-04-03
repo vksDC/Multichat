@@ -67,6 +67,9 @@
     <Content Include="app_client\images\nacre-background-tile.jpg" />
     <Content Include="app_client\images\videoconference.png" />
     <Content Include="app_client\stylesheets\main.css" />
+    <Content Include="app_client\stylesheets\style.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app_server\views\about.jade">
       <SubType>Code</SubType>
     </Content>
@@ -119,6 +122,7 @@
     <Folder Include="app_client\javascripts\controllers\" />
     <Folder Include="app_client\javascripts\directives\" />
     <Folder Include="app_client\javascripts\modules\" />
+    <Folder Include="app_client\javascripts\utils\" />
     <Folder Include="app_client\javascripts\services\" />
     <Folder Include="app_client\stylesheets\" />
     <Folder Include="app_server\" />
@@ -160,6 +164,9 @@
     <Compile Include="app_client\javascripts\controllers\logoutCtrl.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app_client\javascripts\controllers\peopleCtrl.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app_client\javascripts\controllers\profileCtrl.js">
       <SubType>Code</SubType>
     </Compile>
@@ -179,6 +186,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_client\javascripts\services\webSocketManagerServ.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app_client\javascripts\utils\peopleManagement.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app_server\config.js">

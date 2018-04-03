@@ -1,0 +1,22 @@
+﻿/*PEOPLE LIST*/
+
+#peopleList {
+    height: 750px;
+    overflow: auto;
+}
+
+ul#listGroupPeople {
+    background-color: #f9fffe;
+    font-family: "Open Sans", sans-serif;
+    font-size: medium;
+}
+
+ul#listGroupPeople li {
+    border-radius: 10px;
+    color: #028225;
+}
+
+ul#listGroupPeople li:first-child {
+    background-color: #f9feff;
+    font-style: italic;
+}

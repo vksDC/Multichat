@@ -7,15 +7,19 @@
 
     var HOST = location.origin.replace(/^http/, 'ws');
     var ws = $websocket(HOST);
+    var peopleManagement = new PeopleManagement(ws, growl);
+
     ws.onOpen(function () {
-        console.log("Open");
-        growl.success('Server started. Enjoy!', { title: 'Success', });
+        peopleManagement.setLoading(false);
+        growl.success('Server started. Enjoy!', { title: 'Success' });
         setInterval(function () {
             ws.send('ping at ' + new Date().getUTCSeconds());
         }, 30000);
     });
 
     window.onbeforeunload = function () {
+        //disconnect current user
+        peopleManagement.setDisconnected();
         ws.close();
     };
 
@@ -23,11 +27,20 @@
         if (utils.isJson(message.data))
         {
             var obj = JSON.parse(message.data);
+            switch (obj.section) {
+                case "people":
+                    if (obj.data.operation === 'connected')
+                        peopleManagement.addPerson(obj.data);
+                    else if (obj.data.operation === 'disconnected')
+                        peopleManagement.deletePerson(obj.data);
+                    break;
+            }
         }
     });
 
     var methods = {
         ws: ws,
+        peopleManagement: peopleManagement
     };
 
     return methods;
