@@ -40,40 +40,20 @@ app.use('/', routesServer); //routes for the different web pages of the site
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
+    console.log("*** ERROR 404: " + err);
+
     var err = new Error('Not Found');
     err['status'] = 404;
     err['imageSrc'] = 'error-404.png';
     err['imageAlt'] = 'Error 404';
     next(err);
+    res.end();
 });
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-/*if (app.get('env') === 'development') {
-    app.use((err: any, req, res, next) => {
-        res.status(err['status'] || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}*/
-
-// production error handler
-// no stacktraces leaked to user
-/*app.use((err: any, req, res, next) => {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});*/
 
 //generic error handler
 app.use(function (err, req, res, next)
 {
+    console.log("*** ERROR GENERICO: " + err);
     res.render('error', {
         error: {
             imageSrc: err.imageSrc,
@@ -85,7 +65,8 @@ app.use(function (err, req, res, next)
             message: err.message,
             title: 'MultiChat: Error'
         }
-    })
+    });
+    res.end();
 });
 
 var httpsServer = require('./app_server/servers/http.js')(app); //HTTP server

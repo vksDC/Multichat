@@ -11,14 +11,12 @@
 
                 function success(res) {
                     scope.data.errorShow = false;
-                    if (res.data.length > 0)
-                    {
+                    if (res.data.length > 0) {
                         //the user already exists
                         modelVal.$setValidity('userNameAvailable', false);
                         defer.reject("Username has already been taken");
                     }
-                    else
-                    {
+                    else {
                         modelVal.$setValidity('userNameAvailable', true);
                         defer.resolve();
                     }
@@ -32,7 +30,7 @@
                 }
 
                 return defer.promise;
-            }
+            };
         }
     };
 });

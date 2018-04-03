@@ -2,8 +2,9 @@
 
 config.db = {}; //MongoDB database
 
-config.db.local = 'mongodb://localhost/multichat';
-config.db.test = 'mongodb://localhost/multichat_test';
+config.db.local = 'mongodb://localhost:27017/Multichat';
+config.db.test = 'mongodb://localhost:27017/Multichat';
+//config.db.test = 'mongodb://localhost:27017/multichat_test';
 config.db.remote = process.env.MONGO_URI;
 
 module.exports = config;

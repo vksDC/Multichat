@@ -6,6 +6,7 @@ var User = mongoose.model('User');
 require('../config/passport.js');
 
 module.exports.register = function (req, res) {
+    console.log("ENTRAMOS EN REGISTRO");
     if (!req.body.userName || !req.body.name || !req.body.password)
     {
         utils.sendJSONresponse(res, 400, { "message": "All fields required" });
@@ -13,12 +14,17 @@ module.exports.register = function (req, res) {
     }
 
     var user = new User();
+
     user.userName = req.body.userName;
     user.name = req.body.name;
     user.setPassword(req.body.password);
 
     user.save(function (err) {
         var token;
+
+        console.log("REQUEST: " + req.body);
+        console.log("RESPUESTA: " + res.body);
+        console.log("ERROR: " + err);
 
         if (err)
         {
@@ -62,10 +68,12 @@ module.exports.login = function (req, res) {
 
 module.exports.profile = function (req, res) {
     User.find({ userName: req.body.userName }, function (err, docs) {
-        if (err) {
+        if (err)
+        {
             utils.sendJSONresponse(res, 500, err); //Internal server error
         }
-        else if (docs.length > 0) {
+        else if (docs.length > 0)
+        {
             var user = docs[0]; //user exists
             console.log(user._id);
 
@@ -78,10 +86,12 @@ module.exports.profile = function (req, res) {
             User.update({ userName: req.body.userName }, user, function (err) {
                 var token;
 
-                if (err) {
+                if (err)
+                {
                     utils.sendJSONresponse(res, 500, err); //Error
                 }
-                else {
+                else
+                {
                     token = user.generateJwt();
                     utils.sendJSONresponse(res, 200, { //OK
                         "token": token
@@ -89,7 +99,8 @@ module.exports.profile = function (req, res) {
                 }
             });
         }
-        else {
+        else
+        {
             utils.sendJSONresponse(res, 404, ""); //No content => Error
         }
     });
@@ -101,7 +112,8 @@ module.exports.users = function (req, res) {
             utils.sendJSONresponse(res, 500, err); //Internal server error
         else if (docs.length > 0)
             utils.sendJSONresponse(res, 200, docs); //200 OK
-        else utils.sendJSONresponse(res, 204, ""); //204 No Content
+        else
+            utils.sendJSONresponse(res, 204, ""); //204 No Content
     });
 };
 

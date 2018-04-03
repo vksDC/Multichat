@@ -12,13 +12,16 @@ passport.use(new LocalStrategy({
             userName: username
         },
         function (err, user) {
-            if (err) {
+            if (err)
+            {
                 return done(err);
             }
-            if (!user) {
+            if (!user)
+            {
                 return done(null, false, { message: 'Incorrect username.' });
             }
-            if (!user.validPassword(password)) {
+            if (!user.validPassword(password))
+            {
                 return done(null, false, { message: 'Incorrect password.' });
             }
             return done(null, user);
