@@ -42,6 +42,10 @@
                         }
                         break;
 
+                    case 'audio':
+                        broadcast(message, ''); //to notify everybody
+                        break;
+
                     default: console.log('Unrecognized message');
                         break;
                 }

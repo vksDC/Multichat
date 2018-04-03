@@ -8,6 +8,7 @@
     var HOST = location.origin.replace(/^http/, 'ws');
     var ws = $websocket(HOST);
     var peopleManagement = new PeopleManagement(ws, growl);
+    var audioManagement = new AudioManagement(ws, growl);
 
     ws.onOpen(function () {
         peopleManagement.setLoading(false);
@@ -34,13 +35,17 @@
                     else if (obj.data.operation === 'disconnected')
                         peopleManagement.deletePerson(obj.data);
                     break;
+                case "audio":
+                    audioManagement.updateAudioUrl(obj.data.url);
+                    break;
             }
         }
     });
 
     var methods = {
         ws: ws,
-        peopleManagement: peopleManagement
+        peopleManagement: peopleManagement,
+        audioManagement: audioManagement
     };
 
     return methods;
