@@ -81,8 +81,6 @@ block messages
                         textarea.form-control(rows='1' placeholder='#{lang.commentEnter}' ng-model='$parent.comment' ng-keyup='checkEnter($event)')
                         button.btn.btn-primary(type=button ng-disabled="!$parent.comment" ng-click='commentSent()') #{lang.send}
 
-block video
-
 block audio
     div(ng-controller='audioCtrl')
         input(type='checkbox' id='muteAudioCheckbox' ng-model='muteAudioModel' ng-checked='{{muteAudioModel}}' ng-change='changeMuteAudioModel()')
@@ -91,11 +89,3 @@ block audio
         'showAudioModal("#{lang.modal.selectAudio}","#{lang.modal.url}", "#{lang.modal.accept}", "#{lang.modal.cancel}")') #{lang.selectAudio}
         audio#audioId(controls width='100%' height='100%')
             source#audioSource(src='#{config.audioUrl}')
-
-block videoconference
-
-block geolocation
-
-block drawings
-
-block presentations
