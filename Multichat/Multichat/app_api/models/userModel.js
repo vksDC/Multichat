@@ -14,22 +14,20 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    password: String
-//    hash: String,
-//    salt: String
+    hash: String,
+    salt: String
 });
 
 // contraseñas
 userSchema.methods.setPassword = function (password) {
-    //this.salt = crypto.randomBytes(16).toString('hex');
-    //this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
-    this.password = password;
+    this.salt = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
+    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 };
 
 userSchema.methods.validPassword = function (password) {
-    //var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
-    //return this.hash === hash;
-    return this.password === password;
+    this.salt = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
+    var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+    return this.hash === hash;
 };
 
 // JWT
@@ -44,7 +42,6 @@ userSchema.methods.generateJwt = function () {
         iat: moment().unix(),
         exp: moment().add(14, "days").unix()
     };
-    //return jwt.encode(payload, process.env.JWT_SECRET);
     return jwt.encode(payload, secret);
 };
 
