@@ -115,6 +115,7 @@
     <Content Include="bower.json">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Procfile" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
