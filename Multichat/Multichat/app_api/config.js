@@ -1,6 +1,6 @@
 ﻿var config = {};
 
-config.db = {}; //MongoDB database
+config.db = {};
 
 config.db.local = 'mongodb://localhost:27017/Multichat';
 config.db.test = 'mongodb://localhost:27017/Multichat';
